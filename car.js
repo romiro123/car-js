@@ -5,7 +5,7 @@ var id;
 //событие при наведение курсора
 getCar.onmouseover = function() {
 	//console.log('over');
-	
+	sedan.style.transform = 'scale(1, 1)';
 	if(id) clearInterval(id);
 	id = setInterval(toDriveRight, 2);
 }
@@ -13,7 +13,7 @@ getCar.onmouseover = function() {
 //отвода курсора
 getCar.onmouseout = function(){
 	//console.log('out')
-	
+	sedan.style.transform = 'scale(-1, 1)';
 	clearInterval(id);
 	id = setInterval(toDriveLeft, 2);
 }
@@ -30,7 +30,7 @@ function toDriveRight(){
 function toDriveLeft(){
 	if (position == 0){
 		clearInterval(id);
-		
+		sedan.style.transform = 'scale(1, 1)';
 	}else{
 		position --;
 		sedan.style.left = position + 'px';
